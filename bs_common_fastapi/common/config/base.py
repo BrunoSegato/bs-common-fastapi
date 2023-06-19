@@ -16,6 +16,8 @@ class BaseConfig(BaseSettings):
     APP_CONTACT_EMAIL: str = os.getenv('APP_CONTACT_EMAIL')
     APP_CONTACT_URL: str = os.getenv('APP_CONTACT_URL')
     APP_MAX_LIMIT_VALUE: int = os.getenv('APP_MAX_LIMIT_VALUE', 1000)
+    APP_DESCRIPTION_SKIP: str = os.getenv('APP_DESCRIPTION_SKIP', '')
+    APP_DESCRIPTION_LIMIT: str = os.getenv('APP_DESCRIPTION_LIMIT', '')
     APP_COMMON_RESPONSES = {
         404: {
             'model': ErrorDefaultModel

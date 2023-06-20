@@ -2,8 +2,6 @@ import os
 
 from pydantic import BaseSettings
 
-from bs_common_fastapi.common.model.base_default_model import ErrorDefaultModel
-
 
 class BaseConfig(BaseSettings):
     APP_NAME: str = os.getenv('APP_NAME')
@@ -19,17 +17,6 @@ class BaseConfig(BaseSettings):
     APP_DESCRIPTION_SKIP: str = os.getenv('APP_DESCRIPTION_SKIP', '')
     APP_DESCRIPTION_LIMIT: str = os.getenv('APP_DESCRIPTION_LIMIT', '')
     APP_DESCRIPTION_FIELDS = str = os.getenv('APP_DESCRIPTION_FIELDS', '')
-    APP_COMMON_RESPONSES = {
-        404: {
-            'model': ErrorDefaultModel
-        },
-        422: {
-            'model': ErrorDefaultModel
-        },
-        500: {
-            'model': ErrorDefaultModel
-        },
-    }
 
 
 base_settings = BaseConfig()

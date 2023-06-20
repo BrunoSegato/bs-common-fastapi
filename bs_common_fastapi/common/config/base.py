@@ -30,3 +30,6 @@ class BaseConfig(BaseSettings):
             'model': ErrorDefaultModel
         },
     }
+
+
+base_settings = BaseConfig()
